@@ -1,19 +1,21 @@
-html {
-	box-sizing: border-box;
-	font-family: Helvetica, sans-serif;
-}
-
 *,
 ::before,
 ::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: inherit;
+	box-sizing: border-box;
+	font-family: Helvetica, sans-serif;
 }
 
 body {
 	background-image: none;
 	font-family: Helvetica, sans-serif;
+}
+
+.title{
+	margin-top: 1rem;
+	margin-left: 1rem;
 }
 
 h1,
@@ -90,7 +92,9 @@ header a {
 }	
 
 
-
+nav ul {
+ margin-top: 1rem;
+}
 nav ul {
 		background-color: black;
 		list-style-type: none; 
@@ -614,4 +618,167 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
 	background-color: #fff;
+}
+
+
+/*W03*/
+
+
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  list-style: none;
+  margin: 0;
+}
+
+
+#inv-display li {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+#inv-display li a{
+	display: block;
+  	width: 100%;
+  	overflow: hidden;
+}
+#inv-display li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center; 
+	display: block;
+}
+
+
+.namePrice {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.namePrice h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.namePrice h2 a {
+  text-decoration: none;
+  color: #0073e6;
+  transition: color 0.2s ease;
+}
+
+.namePrice h2 a:hover {
+  color: #005bb5;
+}
+
+.namePrice span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+
+.namePrice hr {
+  border: 0;
+  height: 1px;
+  background: #eaeaea;
+  margin: 1rem 0;
+}
+
+.center{
+	text-align: center;
+	padding: 1rem;
+	font-size: 2rem;
+}
+.center > *{
+	padding: 1rem;
+}
+
+.details-car{
+	display: flex;
+	gap:1rem;
+	font-size: 1.2rem;
+}
+
+.image-section, .info-section {
+	flex: 1 1 50%;
+	padding: 1rem;
+	flex-direction: column;
+	justify-content: center;
+  }
+  
+  .image-section img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+  }
+
+  .info-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1rem;
+  }
+
+  .info-section h2{
+	padding: 1rem;
+	text-align: center;
+  }
+
+  .info-section p {
+	margin: 10px 0;
+	font-size: 1.2rem;
+	padding-top: 1rem;
+  }
+
+  .p-gray{
+	background-color: #f0f0f0;
+	padding: 10px;
+  }
+  .p-no{
+	padding: 10px;
+  }
+
+  @media (max-width: 600px) {
+	.details-car{
+		flex-direction: column;
+	}
+	.image-section, .info-section {
+	  flex: 1 1 100%;
+	  text-align: left;
+	}
+
+	.info-section p {
+	  font-size: 1rem;
+	}
+  }
+
+/* Responsividad adicional */
+@media (max-width: 600px) {
+  #inv-display {
+    padding: 1rem;
+  }
+
+  .namePrice h2 {
+    font-size: 1.1rem;
+  }
+
+  .namePrice span {
+    font-size: 1rem;
+  }
 }
